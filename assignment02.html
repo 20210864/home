@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>취업 정보 계정 만들기</title>
+</head>
+<style>
+  div {margin-left:8px; text-align: right; width:130px; padding-right:8px; display:inline-block;}
+  strong {color:red;}
+  span {margin-left: 200px}
+</style>
+<body>
+<h2>취업 정보 계정 만들기</h2>
+<p style = "color:red; font-size: 10pt;"> * 필수 입력 항목<br><br>
+<p style = "font-weight:bold; background:lightblue; width:800px; padding-left:10px;">기본 정보
+<form>
+  <div>이 름<strong>*</strong></div> <input type = "text" name = "usr_name" size = "8"> <br>
+  <div>이메일<strong>*</strong></div> <input type = "email" name = "e_mail" size = "15" placeholder = "id@domain_name"> <br>
+  <div>암호<strong>*</strong></div> <input type = "password" name = "pad" size = "12"> <br>
+  <div>암호 확인<strong>*</strong></div> <input type = "password" name = "pad_cer" size = "12"> <br>
+  <div>모바일 폰<strong>*</strong></div> <input type = "tel" name = "phone" size = "13" placeholder = "010-0000-0000"> <br>
+  <div>개인 홈페이지</div> <input type = "url" name = "homepage" size = "30" placeholder = " http://"> <br>
+  <div>주소<strong>*</strong></div> <input type = "text" name = "address" size = "30"> <br>
+
+  <p style = "font-weight:bold; background:lightblue; width:800px; padding-left:10px;">학 력
+
+  <div>학교 명<strong>*</strong></div> <input type = "text" name = "sch_name" size = "12"> <br>
+  <div>전 공<strong>*</strong></div> <input type = "text" name = "major" size = "12"> <br>
+  <p>
+  <div>졸업 여부<strong>*</strong></div>
+    <select name = "gra">
+      <option value = "1" selected>---선택---</option>
+      <option value = "2">졸업예정</option>
+      <option value = "3">졸업</option>
+    </select>
+  </p>
+  <div>졸업(예정)일</div> <input type = "date" name = "gra_date"><br>
+  <p style = "font-weight:bold; background:lightblue; width:800px; padding-left:10px;">업무 경력
+
+  <div>근무업체명</div> <input type = "text" name = "bul_name" size = "20"><br>
+  <div>직 위</div> <input type = "text" name = "pos" size = "10"><br>
+  <div>담당 업무</div> <textarea cols = "80" rows = "10">이전 업체에서 담당한 업무를 기술하시오.</textarea><br>
+  <div>근무년수</div> <input type = "number" min = "0" max = "10" step = "0.5" value>년<br>
+
+  <p style = "font-weight:bold; background:lightblue; width:800px; padding-left:10px;">자기소개서
+
+  <div>첨부 파일</div> <input type = "file" id = "self_in" name = "self_in" accept = "file/hwp"><br><br>
+  <span><input type = "submit" name = "sub" value = "제 출"></input>
+  <input type = "reset" name = "re" value = "재작성"></input></span>
+</form>
+</body>
+</html>
