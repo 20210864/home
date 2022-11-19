@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>과제 03-2</title>
+</head>
+<script>
+  function new_row(prev_row) {
+    var new_row = [];
+    var len = prev_row.length;
+    for (var i = 0; i < len - 1; i++) {
+      var a, b;
+      a = parseInt(prev_row[i]);
+      b = parseInt(prev_row[i+1]);
+      new_num = a + b;
+      new_num.toString();
+      new_row = new_row.concat(new_num);
+    }
+      new_row.unshift('1');
+      new_row.push('1');
+
+      return new_row;
+  }
+
+  function pascal(height) {
+    var next = y;
+    for (var j = 0; j < height - 2; j++) {
+      next = new_row(next);
+      var pasTri = next;
+      pasc = pasc.concat("<p>" + pasTri + "</p>");
+    }
+    return pasc;
+  }
+</script>
+<body>
+  <script>
+  var x = ['1'];
+  var y = ['1', '1'];
+  var pasc = "<p>" + x + "</p>" + "<p>" + y + "</p>";
+  var h = prompt('파스칼의 삼각형의 높이: ');
+  var pasTriangle = pascal(h);
+
+  pasTriangle = pasTriangle.split(',').join(" ");
+  document.write( "<p>" + '높이 ' + h + '인 파스칼 삼각형' + "</p>" + pasTriangle);
+  </script>
+</body>
+</html>

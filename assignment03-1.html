@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>과제 03-1</title>
+</head>
+<script>
+  function divide(num) {
+    var length = num.toString();
+    var numLen = length.length;
+    var arr = [], aList = [];
+
+    for (var i = 0; i < numLen; i++) {
+      var x = length.charAt(i);
+      arr = arr.concat(x);
+      }
+
+      if (numLen % 4 === 0) {
+        var maxLen = 4;
+        var amount = numLen / maxLen;
+        for (var j = 0; j < amount; j++) {
+          var sArr = arr.slice(-4);
+          arr.pop();
+          arr.pop();
+          arr.pop();
+          arr.pop();
+          sArr = [sArr.join('')];
+          aList = aList.concat(sArr);
+        }
+      }
+
+      else {
+        while (numLen % 4 !== 0) {
+          arr.unshift('0');
+          numLen = arr.length;
+        }
+
+        var sMaxLen = 4;
+        var sAmount = numLen / sMaxLen;
+        for (var k = 0; k < sAmount; k++) {
+          var sArr = arr.slice(-4);
+          arr.pop();
+          arr.pop();
+          arr.pop();
+          arr.pop();
+          sArr = [sArr.join('')];
+          aList = aList.concat(sArr);
+        }
+      }
+    aList.reverse();
+
+    return aList;
+  }
+
+  function hexa(digit) {
+    var res;
+    var hTable = {
+      '0000' : '0', '0001' : '1', '0010' : '2', '0011' : '3', '0100' : '4', '0101' : '5',
+      '0110' : '6', '0111' : '7', '1000' : '8', '1001' : '9', '1010' : 'A', '1011' : 'B',
+      '1100' : 'C', '1101' : 'D', '1110' : 'E', '1111' : 'F'
+    };
+
+    for (var a = 0; a < digit.length; a++) {
+      if (hTable.hasOwnProperty(digit[a])) {
+        res += hTable[digit[a]];
+      }
+      else {
+        return {valid : false};
+      }
+    }
+
+    res = res.replace('undefined', '');
+    return res;
+  }
+</script>
+<body>
+<script>
+  var num = prompt('2진수를 입력하세요');
+  var digit = divide(num);
+  var result = hexa(digit);
+  document.write("<p>" + num +'의 16진수 값: ' + result + "</p>");
+</script>
+</body>
+</html>
